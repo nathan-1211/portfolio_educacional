@@ -4,6 +4,7 @@ Portfólio educacional desenvolvido como uma carta de apresentação profissiona
 O projeto está em desenvolvimento (Work in Progress), com planos para a implementação das seguintes funcionalidades:
 
  Filosofia Educacional: Seção dedicada à abordagem pedagógica e visão sobre ensino e aprendizagem.
+ Melhorias na responsividade para dispositivos móveis.
  Mural de Projetos: Uma área interativa que explora cada projeto em detalhes.
 A inclusão do mural exigirá a adoção das seguintes tecnologias e melhorias:
 
