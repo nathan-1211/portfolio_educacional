@@ -1,0 +1,380 @@
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #693797, #04012e);
+    color: #ffffff;
+    text-align: center;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('header-bg.jpg') no-repeat center/cover;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: slideIn 1.2s ease-in-out;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px);
+    background-color: #ff4757;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* EFEITO DE REDE NEURAL */
+.neural-network {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.neural-node {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.neural-line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 1px;
+    transform-origin: left;
+}
+
+/* OLHO QUE SEGUE O CURSOR */
+.eye-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+}
+
+.eye {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pupil {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background-color: black;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}
+
+/* SEÇÃO SOBRE MIM */
+.about {
+    background-color: #ffffff;
+    padding: 6rem 10%;
+    text-align: center;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #3f3d56;
+    margin-bottom: 2rem;
+    animation: slideFromLeft 1s ease-out forwards; /* Animação personalizada */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    animation: slideFromLeft 1.2s ease-out forwards; /* Animação personalizada */
+}
+
+.about-image {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: slideFromLeft 1.4s ease-out forwards; /* Animação personalizada */
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 600px;
+    text-align: justify;
+    animation: slideFromLeft 1.6s ease-out forwards; /* Animação personalizada */
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    animation: slideFromLeft 1.8s ease-out forwards; /* Animação personalizada */
+}
+
+.badges span {
+    background-color: #6c63ff;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/* Animação personalizada para mover da esquerda para a direita */
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%); /* Começa fora da tela, à esquerda */
+        opacity: 0; /* Opcional: faz o conteúdo aparecer gradualmente */
+    }
+    to {
+        transform: translateX(0); /* Termina na posição original */
+        opacity: 1; /* Opcional: faz o conteúdo aparecer gradualmente */
+    }
+}
+
+/* SEÇÃO PROJETOS */
+.projects {
+    background-color: #f4f4f4;
+    padding: 6rem 10%;
+    text-align: center;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    color: #3f3d56;
+    margin-bottom: 2rem;
+    animation: slideFromLeft 1s ease-out forwards; /* Animação do título */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Inicia invisível */
+    transform: translateX(100%) rotate(20deg); /* Posição inicial */
+}
+
+.project-card.animate {
+    animation: throwCard 0.8s ease-out forwards; /* Animação de arremesso */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    color: #3f3d56;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.btn-project {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 8px 16px;
+    background-color: #6c63ff;
+    color: #ffffff;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-project:hover {
+    background-color: #5a52e0;
+}
+
+/* Animação de arremesso do card */
+@keyframes throwCard {
+    from {
+        transform: translateX(100%) rotate(20deg); /* Começa fora da tela, à direita */
+        opacity: 0; /* Inicia invisível */
+    }
+    to {
+        transform: translateX(0) rotate(0); /* Termina na posição original */
+        opacity: 1; /* Torna-se visível */
+    }
+}
+
+/* SEÇÃO CONTATO */
+.contact {
+    background-color: #3f3d56;
+    padding: 6rem 10%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    background-color: #6c63ff;
+    color: #ffffff;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.contact-link:hover {
+    transform: translateY(-5px);
+    background-color: #5a52e0;
+}
+
+.contact-link img {
+    width: 24px;
+    height: 24px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
